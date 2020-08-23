@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Instagram</title>
+	<link rel="icon" href="Folder nou\2\9.webp"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body onload=loading()>
+<style>
+
+
+
+.logo{
+	font-family:Brush Script MT;
+	font-size:500%;
+	font-weight:bolder;
+	color:white;
+	
+	
+}
+body{
+	background-image:linear-gradient(rgb(0, 0, 0, 0.2),rgb(0, 0, 0, 0.4)),url("photo.jpg");
+	background-repeat:no-repeat;
+	background-size: 2000px 1000px;
+	
+}
+.content{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	height:100%;
+	width:100%;
+	
+}
+
+#load{
+	width:100%; 
+    height:100%; 
+    background-color:black;
+	font-size:100px;
+	z-index:2222;
+	position:fixed;
+	left:0;
+	top:0;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	}
+	
+	#loader{
+		
+		width:120px;
+		height:120px;
+		border-radius:100%;
+		border:2px transparent;
+		border-left:1px solid #6f00ff;
+		
+		animation:spin 2s linear infinite;
+		box-shadow: 0 -1px 50px 0 #5613a8 ;
+		position:absolute;
+		left:46%;
+		top:43%;
+	
+	}
+#loader2{width:100px;
+		height:100px;
+		position:absolute;
+		top:43.5%;
+		left:46.5%;
+		border-radius:100%;
+		border:2px  transparent;
+		border-left:1px solid #0a50c2;
+		
+	box-shadow: 0 1px 1px 0 #0a50c2;
+		animation:spin 2s linear infinite;
+		
+		}
+		
+#loader3{
+	position:absolute;
+		top:43.3%;
+		left:46.4%;
+	width:110px;
+		height:110px;
+		border-radius:100%;
+		border:1px transparent;
+		border-left:1px solid #00ffff;
+		
+		box-shadow: 0 1px 1px 0 #0a50c2;
+		animation:spin 2s linear infinite;
+		display:flex;
+		
+	}
+	
+#loader4{
+	position:absolute;
+		top:43.5%;
+		left:46.8%;
+	width:95px;
+		height:95px;
+		border-radius:100%;
+		border:1px transparent;
+		
+		border-left:2px solid #757abb;
+		animation:spin 2s linear infinite;
+		box-shadow: 0 1px 1px 0 #00fff7;
+		display:flex;
+		
+	
+}
+#loader5{
+	position:absolute;
+		top:43.8%;
+		left:46.4%;
+	width:105px;
+		height:105px;
+		border-radius:100%;
+		border:1px transparent;
+		
+		border-left:1px solid #6d078c;
+		animation:spin 2s linear infinite;
+		box-shadow: 0 1px 1px 0 #5344c2 inset;
+		display:flex;
+		
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg);border-left:1px solid #6d078c;}
+  50%{border-left:1px solid red;}
+  100% { -webkit-transform: rotate(360deg);border-left:1px solid #6d078c;}
+}
+
+#keyframe spin{
+		0%{transform:rotate(0deg);}
+	100%{transform:rotate(360deg);}
+		}
+#registerForm{
+	display:none;
+	width:550px;
+    color:gray;
+	font-size:100%;
+	font-weight:bolder;
+    top:10px;
+	height:100px;
+	background-color:rgb(255, 255, 255, 0.85);
+	border:2px solid grey;
+	height:800px;
+	border-radius:3%;
+	}
+#erorMesage{
+   display:none;
+    color:white;
+	font-size:15px;
+	background:rgb(0,0 ,0 ,0.6);
+	border-radius:4%;
+	width:10px;
+	width:300px;
+	position:absolute;
+	left:40%;
+}
+
+	
+
+#logInForm{
+     border-radius:3%;
+	 border:2px solid grey;
+	 background-color:rgb(255, 255, 255, 0.5);
+	 font-family:Bauhaus 93;
+	 font-weight:bolder;
+	 display:flex;
+	 flex-direction:column;
+	 height:200px;
+	 position:fixed;
+	 top:200px;
+	 width:400px;
+	
+}
+#logInForm div{
+        padding:10px;
+}
+.contLog{
+             display:flex;
+			 flex-direction:row;
+			 align-item:center;
+			 justify-content:center;
+			 padding:10px;
+			 
+}
+.contLog div{
+font-family:Cooper Black;
+margin:2px;
+}
+#regContent .contLog div{
+width:200px;
+height:50px;
+}
+#butons{
+    display:flex;
+	flex-direction:row;
+	background-color:gray;
+	height:38px;
+	justify-content:space-between;
+	align-items:center;
+	
+	
+	
+}
+
+.btn{
+   background:transparent;
+   border:0px transparent;
+   color:white;
+   font-color:100px;
+   font-weight:bolder;
+   border-radius:5%;
+   font-family:Andika;
+   font-size:20px;
+}
+.btn:hover{
+ background-color:#C1BEBE;
+ 
+}
+.eror{
+    display:none;
+    color:red;
+	border-radius:2%;
+	width:300px;
+	font-size:10px;
+    padding:0px;
+	height:5px;
+	
+}
+
+}
+.inputContainer{
+         display:flex;
+		 flex-direction:column;
+		 justify-content:center;
+		 align-items:center;
+}
+
+}
+#regContent{
+     border-radius:3%;
+	 border:2px solid grey;
+	 background-color:rgb(255, 255, 255, 0.8);
+	 justify-content:center;
+	 font-weight:bolder;
+	 display:flex;
+	 flex-direction:column;
+	 height:400px;
+	 align-items:space-between;
+}
+#regContent #butons{
+           
+		   width:550px;
+		   
+		   
+}
+input{
+  border:2px solid grey;
+  border-right:1px transparent;
+  border-top:1px transparent;
+  border-left: 1px transparent;
+  background:transparent;
+  font-weight:bolder;
+}
+input:hover{
+       border:2px solid #30baaa;
+	   border-right:1px transparent;
+  border-top:1px transparent;
+  border-left: 1px transparent;
+}
+input:focus{ 
+ border:2px solid #30baaa;
+ border-right:1px transparent;
+  border-top:1px transparent;
+  border-left: 1px transparent;
+  outline:none;
+}
+
+
+
+#profileBtn{
+  background-color:transparent;
+  border-radius:50%;
+  margin:none;
+  outline:none;
+ border:1px transparent;
+}
+#profileBtn i{
+   color:grey;
+   font-size:50px;
+}
+#profileBtn:hover i{
+        color:#30baaa;
+		cursor:pointer;
+  }
+  
+  #fileBtn{display:none;}
+
+  #icon i{
+    color:#30baaa;
+	font-size:40px;
+  }
+  .contLog i{
+    color:#30baaa
+  }
+  #UserEror{
+        position:absolute;
+		top:235px;
+  }
+  #shortPass{
+   position:absolute;
+		top:310px;
+  }
+  #title{
+   color:#30baaa
+   font-size:100px;
+  
+  }
+  #profile{
+   width:60px;
+   height:60px;
+   border-radius:5%;
+   display:none;
+   position:absolute;
+   
+   border:2px solid grey;
+  }
+  #regContentBox{
+      display:flex;
+	  flex-direction:column;
+	  align-item:space-between;
+	  justify-content:space-between;
+  }
+
+   input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+</style>
+
+
+<div id="load">
+ 
+ <div id="loader"></div>
+ <div id="loader2"></div>
+ <div id="loader3"></div>
+ <div id="loader4"></div>
+ <div id="loader5"></div>
+ <div id="loader6"></div>
+</div>
+<div class="content">
+<div class="logo">Instagram</div>
+<div id="logInForm">
+<div class="contLog">
+ <div>  <i class="material-icons">account_circle</i></div><div><input id="username" type="text" placeholder="Username" required></div>
+</div>
+<div class="contLog">
+ <div>  <i class="material-icons">vpn_key</i></div><div><input id="pass" type="password" placeholder="Password" required></div>
+</div>
+
+<div id="butons">
+ <div><button onclick="myFunction3()" class="btn" type="button">Sign In</button></div>
+ <div ><button id="regBtn" class="btn" onclick="appear()">Sign Up</button></div>
+</div>
+</div>
+
+<div id="registerForm">
+           <div><input type="file" id="fileBtn" hidden="hidden"></div>
+		   
+          <div id="regContent">
+                <div id="regContentBox">
+				<form id="signUp">
+				  <div class="contLog">
+				     <div>Profile image:</div>
+				     <div class="contLog">
+				     <div><button type="button" id="profileBtn"><i class="material-icons">local_see</i></bottom></div>
+				     <div><img  id="profile"></div>
+				     </div>
+				  </div>
+                  <div class="contLog">
+                      <div id="icon"><i class="material-icons">person_add</i></div>
+				      <div class="inputContainer">
+				      <div><input type="text" id="newUser" placeholder="New Username" required></div>
+				      <div class="eror" id="UserEror">Username is used</div>
+				      </div>
+				  </div>
+				  <div class="contLog">
+                     <div id="icon" ><i class="material-icons">lock</i></div>
+				     <div class="inputContainer"> 
+				     <div>
+				     <input type="password" id="newPas" placeholder="New Password" required></div>
+				     <div id="shortPass" class="eror">Password is too short!</div>
+				     </div>
+				  </div>
+				    <div class="contLog">
+                      <div id="icon"><i class="material-icons">verified_user</i></div>
+				      <div class="inputContainer">
+				      <div><input type="text" id="name" placeholder="Full Name" required></div>
+				      </div>
+				  </div>
+				  <div class="contLog">
+                      <div id="icon"><i class="material-icons">markunread</i></div>
+				      <div class="inputContainer">
+				      <div><input type="email" id="email" placeholder="Email" required></div>
+				      </div>
+				  </div>
+				  <div class="contLog">
+                      <div id="icon"><i class="material-icons">local_phone</i></div>
+				      <div class="inputContainer">
+				      <div><input type="number" id="phone" placeholder="Phone" required></div>
+				      </div>
+				  </div>
+				  </form>
+				  </div>
+				  <div id="butons">
+				     <div><input type="submit" form="signUp"  onclick="register()" class="btn" value="Sign Up">p</div>
+				     <div><button type="button" onclick="cancel()" class="btn">Cancel</button></div>
+				  </div>
+
+         </div>
+</div>
+</div>
+<div id="erorMesage" >Username or password is incorrect!</div>
+</div>
+<script>
+
+ 
+ var profile=document.getElementById("profile");   
+var users=JSON.parse(localStorage.getItem("users"));
+ 
+ if(users != null){
+ var    person=[];
+        person=person.concat(JSON.parse(localStorage.getItem("users")));
+    }
+ function myFunction3(){
+ var login=document.getElementById("username").value;
+ var pass=document.getElementById("pass").value;
+     for(i=0; i<person.length; i++){
+        if(login == person[i].username && pass == person[i].password){
+ 	    location="users/home.html";
+		localStorage.setItem("src",person[i].image)
+		localStorage.setItem("username",person[i].username);
+		localStorage.setItem("fullName",person[i].name);break
+	          }
+           else {
+		   document.getElementById("username").value="";
+		   document.getElementById("pass").value="";
+		   document.getElementById("erorMesage").style.display="block";
+		    }
+    
+ }
+ }
+ function register(){
+ 	 var register=document.getElementById("newUser").value;
+     var newPass=document.getElementById("newPas").value;
+	 var imgInput=document.getElementById("fileBtn").value;
+	 var name=document.getElementById("name").value;
+	 var email=document.getElementById("email").value;
+	 var newUser={
+	 	username: register,
+		password: newPass,
+		image:localStorage.getItem("src"),
+		name: name,
+		email:email
+	 }
+      var profile=document.getElementById("profile");
+	  
+	  
+	 var elem=document.getElementById("registerForm");
+	var loginp=document.getElementById("logInForm");
+	var btn=document.getElementById("regBtn");
+	if(newPass.length>7 ){
+	document.getElementById("shortPass").style.display="none"
+	var n
+	if(person !== undefined){
+	 for(i=0; i<person.length; i++){
+       if(register != person[i].username){
+   
+	
+   }
+ 	
+        else{ 
+   document.getElementById("UserEror").style.display="block" ;break;
+   
+   elem.style.display="none";
+	loginp.style.display="block";
+    btn.style.display="block"; 
+    document.getElementById("UserEror").style.display="none"
+	location.reload()
+	n++
+   
+   }}
+   
+   
+   
+   if (n=person.length){ person.push(newUser)
+	localStorage.setItem("users",JSON.stringify(person))}}
+   else{
+    localStorage.setItem("users",JSON.stringify(newUser));
+	elem.style.display="none";
+	loginp.style.display="block";
+   btn.style.display="block"; 
+    document.getElementById("UserEror").style.display="none"
+	location.reload()}
+ }
+ else{
+    document.getElementById("shortPass").style.display="block"
+	
+	elem.style.display="block";
+	loginp.style.display="none";
+   btn.style.display="none";}
+ profile.src=imgInput;
+	
+ }
+ function appear(){
+ 	var elem=document.getElementById("registerForm");
+	var loginp=document.getElementById("logInForm")
+	var btn=document.getElementById("regBtn")
+	elem.style.display="block";
+	loginp.style.display="none";
+	btn.style.display="none";
+	document.getElementById("erorMesage").style.display="none"
+ }
+ 
+ function cancel(){
+        var elem=document.getElementById("registerForm");
+		var loginp=document.getElementById("logInForm")
+	var btn=document.getElementById("regBtn")
+	 elem.style.display="none"
+	 loginp.style.display="block";
+	btn.style.display="block";
+	document.getElementById("erorMesage").style.display="none"
+ }
+ 
+ 
+ 
+  const fileBtn=document.getElementById("fileBtn");
+ const profileBtn=document.getElementById("profileBtn");
+ 
+ profileBtn.addEventListener("click",function(){
+     fileBtn.click();
+ 
+ });
+ fileBtn.addEventListener("change",function(){
+  const file=this.files[0];
+  
+  if (file){
+    const reader=new FileReader()
+	profile.style.display="block";
+	
+	reader.addEventListener("load",function(){
+	profile.setAttribute("src",this.result)
+	localStorage.setItem("src",this.result)
+	});
+	reader.readAsDataURL(file);
+  }
+ else{
+   profile.style.display="none";
+ }
+ 
+ });
+
+ 
+ function loading(){
+ var loading=document.getElementById("load");
+ loading.style.display="none"
+}
+ 
+</script>
+</body>
+</html>
